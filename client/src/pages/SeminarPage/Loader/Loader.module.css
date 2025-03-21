@@ -1,0 +1,20 @@
+.mainContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  }
+  
+  .seminarsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    border-radius: 10px;
+    width: 93%;
+    min-height: 573px;
+    background-color: white;
+    text-align: center;
+  }
+  
+  .loadingText {
+    font-size: 25px;
+  }

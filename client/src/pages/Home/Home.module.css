@@ -1,0 +1,57 @@
+.main_container {
+  display: flex;
+  justify-content: center;
+  flex: 1; /* Растягивает контент на всю доступную высоту */
+}
+
+.seminars_contanter {
+  border: 1px solid red;
+  position: relative;
+  display: flex;
+  border-radius: 10px;
+  width: 93%;
+  height: 87vh;
+  background-color: white;
+
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: Arial, sans-serif;
+  position: absolute;
+  top: 50px;
+  right: 200px;
+  font-size: 25px;
+}
+
+.photo {
+  position: absolute;
+  left: 0;
+  height: 98%;
+  border-radius: 10px;
+  margin: 6px;
+}
+
+.container_btns {
+  /* position: absolute; */
+  right: 0;
+  display: inline-block;
+}
+
+.container_btns button {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: 600px;
+  height: 40px;
+  width: 120px;
+  border: 1px solid black;
+  border-radius: 30px;
+}
+
+.container_btns button p {
+  font-size: 20px;
+}

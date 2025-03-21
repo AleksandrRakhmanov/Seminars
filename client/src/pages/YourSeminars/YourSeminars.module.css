@@ -1,0 +1,15 @@
+.main_container {
+  display: flex;
+  justify-content: center;
+  flex: 1; /* Растягивает контент на всю доступную высоту */
+}
+
+.seminars_contanter {
+  border-radius: 10px;
+  width: 93%;
+  height: 87vh;
+  background-color: white;
+
+  justify-content: center;
+  align-items: center;
+}
