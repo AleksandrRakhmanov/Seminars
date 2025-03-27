@@ -18,13 +18,34 @@ const SeminarPage = () => {
   const [comments, setComments] = useState([])
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = () => {
+  const addSeminar = async (seminarId) => {
     setIsModalOpen(true);
+
+    try {
+      // Преобразуем seminarId в число
+      const idAsNumber = Number(seminarId);
+      console.log('Переданный seminarId:', seminarId, 'Тип:', typeof seminarId); // Логирование
+
+      // Проверка, что преобразование прошло успешно
+      if (isNaN(idAsNumber)) {
+        throw new Error('seminarId должен быть числом');
+      }
+
+      const response = await axios.post('http://localhost:5005/addSeminar', {
+        seminarId: idAsNumber,
+      });
+
+      console.log(response.data); // Обработка ответа от сервера
+    } catch (err) {
+      console.error(err);
+    }
   };
+
 
   const closeModal = () => {
     setIsModalOpen(false);
   }
+
 
       // Функция для увеличения просмотров
       const incrementViews = async () => {
@@ -59,6 +80,7 @@ const SeminarPage = () => {
     // Получаем данные о семинаре
     fetchSeminar(); 
     
+    // Получаем комментарии к семинару
     get_comments()
 
     // Увеличиваем просмотры
@@ -89,12 +111,12 @@ const SeminarPage = () => {
                 <img className={styles.rate_icon} src={rate_icon}/>
                 <div className={styles.seminar_rate}>4.5</div>
               </div>
-              <button className={styles.addFavoriteBtn}>
+              {/* <button className={styles.addFavoriteBtn}>
                 <img className={styles.iconFavorite} src={watch_icon} alt="favorite" />
                 Смотреть семинар
-              </button>
-              <button className={styles.addFavoriteBtn} onClick={openModal}>
-                <img className={styles.iconFavorite} src={icon_favorite} alt="favorite" />
+              </button> */}
+              <button className={styles.addFavoriteBtn} onClick={() => addSeminar(id)}>
+                <img className={styles.iconFavorite} src={icon_favorite}  alt="favorite" />
                 Буду смотреть
               </button>
               <div className={styles.description_container}>
@@ -151,76 +173,7 @@ const SeminarPage = () => {
             </div>
            
           </div>
-
-
-
         ))}
-
-        {/* <div className={styles.comment}>
-            <div className={styles.user_info}>
-            <img src={comments.photo_url} className={styles.user_image}/>
-            <div className={styles.comment_username}>{comments.username}</div>
-            <div>
-              <img className={styles.comment_rate_icon} src={rate_icon} alt="" />
-              <img className={styles.comment_rate_icon} src={rate_icon} alt="" />
-              <img className={styles.comment_rate_icon} src={rate_icon} alt="" />
-              <img className={styles.comment_rate_icon} src={rate_icon} alt="" />
-              <img className={styles.comment_rate_icon} src={rate_icon} alt="" />
-
-            </div>
-            </div>
-            <div>
-            <p className={styles.comment_text}>
-              Прекрасный семинар, позволяющий раскрыть внутренний потенциал и силу земли
-            </p>
-            </div>
-           
-          </div>
-
-
-
-
-
-          <div className={styles.comment}>
-            <div className={styles.user_info}>
-            <img src={userPhoto2} className={styles.user_image}/>
-            <div className={styles.comment_username} >Борис Дуев</div>
-            <div>
-              <img className={styles.comment_rate_icon} src={rate_icon} alt="" />
-              <img className={styles.comment_rate_icon} src={rate_icon} alt="" />
-              <img className={styles.comment_rate_icon} src={rate_icon} alt="" />
-              <img className={styles.comment_rate_icon} src={rate_icon} alt="" />
-              <img className={styles.comment_rate_icon} src={rate_icon} alt="" />
-
-            </div>
-            </div>
-            <div>
-            <p className={styles.comment_text}>
-              Прекрасный семинар, позволяющий раскрыть внутренний потенциал и силу земли
-            </p>
-            </div>
-           
-          </div>
-          <div className={styles.comment}>
-            <div className={styles.user_info}>
-            <img src={userPhoto} className={styles.user_image}/>
-            <div className={styles.comment_username} >Борис Дуев</div>
-            <div>
-              <img className={styles.comment_rate_icon} src={rate_icon} alt="" />
-              <img className={styles.comment_rate_icon} src={rate_icon} alt="" />
-              <img className={styles.comment_rate_icon} src={rate_icon} alt="" />
-              <img className={styles.comment_rate_icon} src={rate_icon} alt="" />
-              <img className={styles.comment_rate_icon} src={rate_icon} alt="" />
-
-            </div>
-            </div>
-            <div>
-            <p className={styles.comment_text}>
-              Прекрасный семинар, позволяющий раскрыть внутренний потенциал и силу земли
-            </p>
-            </div>
-           
-          </div> */}
         </div>
         </div>
         

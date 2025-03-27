@@ -17,6 +17,11 @@
   border-radius: 20px;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* button {
   bottom: 0;
   border: none;

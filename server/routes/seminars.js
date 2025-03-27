@@ -116,16 +116,4 @@ router.post('/:id/view', async (req, res) => {
   }
 });
 
-// router.get('/comments', async (req, res) => {
-//   try {
-//     const [results] = await db.query(SQL_getComments); // Получаем данные
-//     res.json(results); // Отправляем данные клиенту
-//   } catch (error) {
-//     console.error('Ошибка при выполнении запроса', error);
-//     res.status(500).json({ message: 'Ошибка сервера' });
-//   }
-// });
-
-
-
 export default router;

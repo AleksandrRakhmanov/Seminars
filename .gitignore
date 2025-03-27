@@ -28,3 +28,7 @@ server/dist/
 # Logs
 logs/
 *.log
+
+
+# Файл с планами на проект
+plans.txt

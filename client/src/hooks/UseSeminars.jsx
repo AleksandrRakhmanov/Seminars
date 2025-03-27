@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const useSeminars = () => {
   const [seminars, setSeminars] = useState([]);
@@ -10,14 +11,16 @@ const useSeminars = () => {
 
   // Загрузка семинаров
   useEffect(() => {
-    fetch('http://localhost:5005/seminars')
-      .then((response) => response.json())
-      .then((data) => {
-        setSeminars(data);
-      })
-      .catch((error) => {
+    const loadSeminars = async () => {
+      try {
+        const response = await axios.get('http://localhost:5005/seminars');
+        setSeminars(response.data);
+      } catch (error) {
         console.error('Ошибка при загрузке семинаров:', error);
-      });
+      }
+    };
+
+    loadSeminars();
   }, []);
 
   // Удаление семинара
@@ -32,32 +35,14 @@ const useSeminars = () => {
   };
 
   const confirmDelete = async () => {
-    if (!seminarToDelete) {
-      return;
-    }
+    if (!seminarToDelete) return;
 
     try {
-      const response = await fetch(
-        `http://localhost:5005/seminars/${seminarToDelete}`,
-        {
-          method: 'DELETE',
-        }
-      );
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(
-          `Ошибка при удалении семинара: ${response.status} ${response.statusText} ${errorData}`
-        );
-      }
-
-      setSeminars((prev) =>
-        prev.filter((seminar) => seminar.id !== seminarToDelete)
-      );
-
+      await axios.delete(`http://localhost:5005/seminars/${seminarToDelete}`);
+      setSeminars(prev => prev.filter(seminar => seminar.id !== seminarToDelete));
       console.log('Семинар успешно удалён');
-    } catch (err) {
-      console.error('Ошибка при удалении семинара:', err);
+    } catch (error) {
+      console.error('Ошибка при удалении семинара:', error);
     } finally {
       setIsDeleteModalOpen(false);
       setSeminarToDelete(null);
@@ -72,40 +57,24 @@ const useSeminars = () => {
 
   const editFormChange = (e) => {
     const { name, value } = e.target;
-    setSeminarToEdit((prev) => ({
+    setSeminarToEdit(prev => ({
       ...prev,
       [name]: value,
     }));
   };
 
   const saveEditedSeminar = async () => {
-    if (!seminarToEdit) {
-      return;
-    }
+    if (!seminarToEdit) return;
 
     try {
-      const response = await fetch(
+      const response = await axios.patch(
         `http://localhost:5005/seminars/${seminarToEdit.id}`,
-        {
-          method: 'PATCH',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(seminarToEdit),
-        }
+        seminarToEdit
       );
 
-      if (!response.ok) {
-        throw new Error(`Ошибка: ${response.status} ${response.statusText}`);
-      }
-
-      const data = await response.json();
-
-      setSeminars((prev) =>
-        prev.map((seminar) =>
-          seminar.id === seminarToEdit.id
-            ? { ...seminar, ...data.updates }
-            : seminar
+      setSeminars(prev =>
+        prev.map(seminar =>
+          seminar.id === seminarToEdit.id ? { ...seminar, ...response.data.updates } : seminar
         )
       );
 

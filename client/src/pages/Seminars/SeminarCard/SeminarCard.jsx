@@ -17,18 +17,19 @@ useEffect(() => {
 
 
   return (
-    <Link to={`/seminars/${seminar.id}`} className={styles.seminar_card} key={seminar.id}>
+    <div className={styles.seminar_card}>
+    <Link to={`/seminars/${seminar.id}`}  key={seminar.id}>
       <div className={styles.description_card}></div>
       <div>
         <div className={styles.icons}>
-          <button
+          {/* <button
             className={styles.edit_btn}
             onClick={() => onEdit(seminar)}
-          ></button>
-          <button
+          ></button> */}
+          {/* <button
             className={styles.delete_btn}
             onClick={() => onDelete(seminar.id)}
-          ></button>
+          ></button> */}
         </div>
         <h2 className={styles.seminar_title}>{seminar.title}</h2>
         <p className={styles.seminar_description}>{seminar.description}</p>
@@ -41,10 +42,12 @@ useEffect(() => {
           alt={seminar.title}
         />
       </div>
-      <button className={styles.join_btn} onClick={onSignUp}>
+
+    </Link>
+    <button className={styles.join_btn} onClick={onSignUp}>
         Записаться
       </button>
-    </Link>
+    </div>
   );
 };
 
