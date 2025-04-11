@@ -18,20 +18,29 @@ app.use(cors());
 
 // Асинхронная функция для подключения к базе данных
 const createConnection = async () => {
-  try {
-    const connection = await mysql.createConnection({
-      host: process.env.DB_HOST,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME,
-      port: 3306,
-    });
-    console.log('Подключение к базе данных успешно');
-    return connection;
-  } catch (err) {
-    console.error('Ошибка подключения к базе данных:', err);
-    process.exit(1); // Завершаем процесс, если подключение не удалось
+  let connection;
+  let retries = 5;
+  
+  while (retries) {
+    try {
+      connection = await mysql.createConnection({
+        host: 'mysql',
+        user: 'root',
+        password: 'test123',
+        database: 'cosmetic_db',
+        port: 3306,
+      });
+      console.log('Connected to database!');
+      return connection;
+    } catch (err) {
+      retries--;
+      console.log(`Connection failed, ${retries} retries left...`);
+      await new Promise(res => setTimeout(res, 5000));
+    }
   }
+  
+  console.error('Unable to connect to database');
+  process.exit(1);
 };
 
 // Создаем подключение к базе данных

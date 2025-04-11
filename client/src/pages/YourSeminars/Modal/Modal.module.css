@@ -11,6 +11,8 @@
     margin-bottom: 10px;
     font-size: 25px;
     color: rgb(51, 51, 51);
+    text-align: center;
+    white-space: nowrap;
 }
 
 .seminars_btn {

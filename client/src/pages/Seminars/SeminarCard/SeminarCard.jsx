@@ -22,25 +22,19 @@ useEffect(() => {
       <div className={styles.description_card}></div>
       <div>
         <div className={styles.icons}>
-          {/* <button
-            className={styles.edit_btn}
-            onClick={() => onEdit(seminar)}
-          ></button> */}
-          {/* <button
-            className={styles.delete_btn}
-            onClick={() => onDelete(seminar.id)}
-          ></button> */}
         </div>
         <h2 className={styles.seminar_title}>{seminar.title}</h2>
         <p className={styles.seminar_description}>{seminar.description}</p>
         <p className={styles.seminar_dateAndTime}>
-          {seminar.date} в {seminar.time}
+          {seminar.date} {seminar.time}
         </p>
+        <div class="photo_container">
         <img
           className={styles.photo_card}
           src={seminar.photo}
           alt={seminar.title}
         />
+        </div>
       </div>
 
     </Link>

@@ -32,11 +32,10 @@ router.post('/', async (req, res) => {
 
 
     await req.db.query(
-      'INSERT INTO yourSeminars(id, title, description, author, views, date, time, photo) VALUES(?,?,?,?,?,?,?,?)',
+      'INSERT INTO yourSeminars(id, title, author, views, date, time, photo) VALUES(?,?,?,?,?,?,?)',
       [
         seminar[0].id,
         seminar[0].title,
-        seminar[0].description,
         seminar[0].author,
         seminar[0].views,
         seminar[0].date,

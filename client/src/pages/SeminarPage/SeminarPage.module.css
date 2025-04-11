@@ -1,14 +1,13 @@
 .mainContainer {
   display: flex;
   /* justify-content: center; */
-  flex: 1; 
+  flex: 1;
 }
 
 .seminarsContainer {
   border-radius: 10px;
   width: 100%;
   /* border: 1px solid black; */
-
 }
 
 .allElementsInCard {
@@ -17,22 +16,19 @@
   /* margin-left: 25px; */
   border-bottom: 1px solid rgb(223, 222, 222);
   /* border: 1px solid black; */
-
 }
-
 
 .back_btn_container {
   padding-top: 3px;
   margin-top: 20px;
   margin-left: 30px;
-  
+
   width: 80px;
   height: 23px;
-  text-decoration: none; 
-  color: inherit; 
-  display: block; 
+  text-decoration: none;
+  color: inherit;
+  display: block;
   /* border: 1px solid black; */
-
 }
 
 .backBtn {
@@ -46,10 +42,7 @@
   width: 20px;
   /* margin-top: 1px; */
   /* margin-left: px; */
-  
 }
-
-
 
 .seminar_image {
   box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.2);
@@ -69,7 +62,6 @@
   display: flex;
 
   /* border: 1px solid rgb(210, 210, 210); */
-
 }
 
 .seminar_name {
@@ -105,7 +97,6 @@
 }
 
 .addFavoriteBtn:hover {
-  
   background-color: rgb(225, 224, 224);
 }
 
@@ -140,16 +131,13 @@
   height: 275px;
   padding-top: 10px;
   padding-left: 20px;
-margin-bottom: 10px;
-
-
+  margin-bottom: 19px;
 }
 
 .descriptionWord {
   font-size: 20px;
   margin-bottom: 20px;
   font-size: 23px;
-  
 }
 
 .description {
@@ -161,7 +149,6 @@ margin-bottom: 10px;
   margin-bottom: 15px;
   border-radius: 10px;
   padding-left: 10px;
-
 }
 
 .count_vies_container {
@@ -176,23 +163,18 @@ margin-bottom: 10px;
 .count {
   margin-top: 5px;
   margin-right: 40px;
-  
 }
-
 
 .author_container {
   margin-top: 4px;
   display: flex;
-
 }
 
 .author_container div {
   margin-right: 6px;
 }
 
-
 /* ---------------- */
-
 
 .modalOverlay {
   position: fixed;
@@ -212,7 +194,6 @@ margin-bottom: 10px;
   border-radius: 8px;
   justify-content: center;
   text-align: center;
-  
 }
 
 .modal button {
@@ -227,17 +208,14 @@ margin-bottom: 10px;
 }
 
 .modal button:hover {
-  background-color: #e4d8ca
+  background-color: #e4d8ca;
 }
-
-
 
 /* ----------------- */
 
 /* COMMENTS */
 
 .main_comment_container {
-  
   /* border: 1px solid black; */
   min-height: 300px;
   /* padding: 0 50px 0 50px; */
@@ -250,8 +228,7 @@ margin-bottom: 10px;
   /* border: 1px solid black; */
   justify-content: center;
   align-items: center;
-width: 100%;
-
+  width: 100%;
 }
 
 .comment {

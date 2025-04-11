@@ -1,14 +1,17 @@
 .confirm_sign_up_btn {
-  background-color: #2ae478;
+  background-color: #f1e8de;
   color: #000000;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s;
+
 }
 
 .confirm_sign_up_btn:hover {
-  background-color: #27cf6d;
+  background-color: #e0d8ce;
+  transform: scale(1.02);
 }
 
 .modal_window {

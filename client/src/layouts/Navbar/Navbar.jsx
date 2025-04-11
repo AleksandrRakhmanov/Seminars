@@ -56,14 +56,14 @@ const Navbar = () => {
             <Link to="/">Главная</Link>
           </li>
           <li onClick={toggleMenu}>
-            <Link to="/yourseminars">Ваши семинары</Link>
+            <Link to="/yourseminars">Мои семинары</Link>
           </li>
           <li onClick={toggleMenu}>
             <Link to="/seminars">Семинары</Link>
           </li>
-          <li onClick={toggleMenu}>
+          {/* <li onClick={toggleMenu}>
             <Link to="/favorites">Избранное</Link>
-          </li>
+          </li> */}
           <li onClick={toggleMenu}>
             <Link to="/about">О нас</Link>
           </li>

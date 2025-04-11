@@ -63,39 +63,6 @@ p {
   font-family: Arial, sans-serif;
 }
 
-.search_input_container {
-  right: 0;
-  position: absolute;
-  margin-top: 12px;
-  margin-bottom: 20px;
-  margin-right: 65px;
-  padding-left: 7px;
-}
-
-.search_input {
-  box-shadow: 7px 7px 8px 0px rgba(0, 0, 0, 0.1);
-  padding-left: 7px;
-  border-radius: 5px;
-  height: 35px;
-  width: 250px;
-}
-
-.search_input:hover {
-  border: 0.1px solid rgb(214, 212, 212);
-}
-
-.search_icon {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
-} 
-
-
-
 /* -------------------------- */
 
 .seminar_card {

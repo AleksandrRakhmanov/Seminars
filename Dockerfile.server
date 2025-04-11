@@ -1,21 +1,17 @@
-
-# Используем официальный образ Node.js
 FROM node:16
 
-# Устанавливаем рабочую директорию
 WORKDIR /app
 
-# Устанавливаем default-mysql-client
-RUN apt-get update && apt-get install -y default-mysql-client && rm -rf /var/lib/apt/lists/*
+# Установка MySQL клиента
+RUN apt-get update && apt-get install -y default-mysql-client
 
-# Копируем package.json и package-lock.json
+# Копируем зависимости сервера
 COPY server/package*.json ./
 
-# Устанавливаем зависимости
 RUN npm install
 
-# Открываем порт, на котором работает сервер
-EXPOSE 5005
+# Копируем остальные файлы сервера
+COPY server/ .
 
-# Запускаем сервер с nodemon
+EXPOSE 5005
 CMD ["npx", "nodemon", "index.js"]
