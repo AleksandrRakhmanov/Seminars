@@ -81,3 +81,15 @@ p {
 } 
 
 
+
+@media (max-width: 1100px) {
+  .seminars_contanter {
+    grid-template-columns: repeat(2, 0fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .seminars_contanter {
+    grid-template-columns: repeat(1, 0fr);
+  }
+}

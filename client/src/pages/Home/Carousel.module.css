@@ -1,0 +1,99 @@
+  .carousel {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .slideContainer {
+    border-radius: 10px;
+    width: 80%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .slideImage {
+    cursor: pointer;
+    width: 800px;
+  }
+  
+  /* Остальные стили остаются без изменений */
+  .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+  }
+  
+  .button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .prevButton {
+    composes: button;
+    left: 10px;
+  }
+  
+  .nextButton {
+    composes: button;
+    right: 10px;
+  }
+  
+  .indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+  }
+  
+  .indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .activeIndicator {
+    composes: indicator;
+    background-color: #333;
+  }
+  
+  .inactiveIndicator {
+    composes: indicator;
+    background-color: #bbb;
+  }

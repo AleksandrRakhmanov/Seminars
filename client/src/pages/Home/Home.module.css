@@ -1,57 +1,45 @@
 .main_container {
   display: flex;
   justify-content: center;
-  flex: 1; /* Растягивает контент на всю доступную высоту */
+  flex: 1;
+  padding: 20px;
 }
 
-.seminars_contanter {
-  border: 1px solid red;
+.seminars_container {
+  padding: 20px;
   position: relative;
   display: flex;
   border-radius: 10px;
-  width: 93%;
-  height: 87vh;
+  width: 100%;
+  max-width: 1200px;
+  height: 600px; 
   background-color: white;
-
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
-h1 {
-  font-family: Arial, sans-serif;
+.title {
+  font-size: 24px;
   position: absolute;
-  top: 50px;
-  right: 200px;
-  font-size: 25px;
+  top: 0;
 }
 
-.photo {
+.buttons_container {
   position: absolute;
-  left: 0;
-  height: 98%;
-  border-radius: 10px;
-  margin: 6px;
+  bottom: 0;
 }
 
-.container_btns {
-  /* position: absolute; */
-  right: 0;
-  display: inline-block;
-}
-
-.container_btns button {
-  display: flex;
-  align-items: center;
-  justify-self: center;
-  margin-bottom: 20px;
-  display: block;
-  margin-left: 600px;
-  height: 40px;
-  width: 120px;
+.buttons_container button {
+  width: 200px;
+  height: 35px;
   border: 1px solid black;
-  border-radius: 30px;
+  border-radius: 40px;
+  margin-right: 40px;
+  margin-bottom: 20px;
+  transition: 0.1s ease;
 }
 
-.container_btns button p {
-  font-size: 20px;
+.buttons_container button:hover {
+  background-color: rgb(237, 237, 237);
 }
