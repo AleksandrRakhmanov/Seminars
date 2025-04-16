@@ -189,7 +189,10 @@ const SeminarPage = () => {
       {isModalOpen && (
         <div className={styles.modalOverlay}>
           <div className={styles.modal}>
-            <p>Семинар добавлен в Ваши семинары!</p>
+            <div>
+            <p>Семинар добавлен в&nbsp;</p>
+            <p> <Link className={styles.modal_link} to='/yourSeminars'>Ваши семинары!</Link></p>
+            </div>
             <button onClick={closeModal}>Закрыть</button>
           </div>
         </div>
