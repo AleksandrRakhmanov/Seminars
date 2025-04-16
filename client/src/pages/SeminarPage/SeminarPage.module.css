@@ -1,21 +1,17 @@
 .mainContainer {
   display: flex;
-  /* justify-content: center; */
   flex: 1;
 }
 
 .seminarsContainer {
   border-radius: 10px;
   width: 100%;
-  /* border: 1px solid black; */
 }
 
 .allElementsInCard {
   width: 100%;
-  margin-bottom: 80px;
-  /* margin-left: 25px; */
+  margin-bottom: 80px; 
   border-bottom: 1px solid rgb(223, 222, 222);
-  /* border: 1px solid black; */
 }
 
 .back_btn_container {
@@ -28,7 +24,6 @@
   text-decoration: none;
   color: inherit;
   display: block;
-  /* border: 1px solid black; */
 }
 
 .backBtn {
@@ -40,8 +35,6 @@
 .arrow_icon {
   position: absolute;
   width: 20px;
-  /* margin-top: 1px; */
-  /* margin-left: px; */
 }
 
 .seminar_image {
@@ -60,14 +53,11 @@
 
 .seminar_rate_container {
   display: flex;
-
-  /* border: 1px solid rgb(210, 210, 210); */
 }
 
 .seminar_name {
   font-size: 26px;
   font-weight: bold;
-  /* border-bottom: 1px solid rgb(210, 210, 210); */
   margin-bottom: 5px;
 }
 
@@ -123,7 +113,6 @@
 }
 
 .description_container {
-  /* box-shadow: 4px -4px 8px 0px rgba(0, 0, 0, 0.2); */
   box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.2);
   background-color: rgb(236, 236, 236);
   border-radius: 10px;
@@ -200,8 +189,7 @@
   display: flex;
 }
 
-.modal_link{
-  /* text-decoration: underline; */
+.modal_link{ 
   border-bottom: 0.5px solid rgb(140, 140, 140);
 }
 
@@ -225,16 +213,13 @@
 /* COMMENTS */
 
 .main_comment_container {
-  /* border: 1px solid black; */
   min-height: 300px;
-  /* padding: 0 50px 0 50px; */
   display: flex;
 }
 
 .comments_container {
   position: relative;
   display: flex;
-  /* border: 1px solid black; */
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -253,7 +238,6 @@
 .comments_word {
   font-size: 25px;
   position: absolute;
-  /* left: 0; */
   top: 0;
 }
 

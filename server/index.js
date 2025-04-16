@@ -68,6 +68,7 @@ app.get('/profile', authMiddleware, (req, res) => {
   });
 });
 
+
 // Запуск сервера
 app.listen(5005, () => {
   console.log('Сервер запущен на http://localhost:5005');
