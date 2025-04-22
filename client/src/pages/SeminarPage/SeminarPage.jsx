@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import arrow_icon from './icons/arrow.png';
-import watch_icon from './icons/watch_icon.png';
 import icon_favorite from './icons/icon_favorite_light.png';
 import count_icon from './icons/eye_icon.png';
 import user_image from './icons/user_image.jpg';
 import rate_icon from './icons/rate_icon.png';
 import Loading from './Loader/Loader';
+import CommentsCarousel from './CommentsCarousel';
 import styles from './SeminarPage.module.css';
 
 const SeminarPage = () => {
@@ -23,7 +23,6 @@ const SeminarPage = () => {
       // Преобразуем seminarId в число
       const idAsNumber = Number(seminarId);
 
-      // Проверка, что преобразование прошло успешно
       if (isNaN(idAsNumber)) {
         throw new Error('seminarId должен быть числом');
       }
@@ -34,7 +33,7 @@ const SeminarPage = () => {
         seminarId: idAsNumber,
       });
 
-      console.log(response.data); // Обработка ответа от сервера
+      console.log(response.data); 
     } catch (err) {
       console.error(err);
     }
@@ -156,31 +155,11 @@ const SeminarPage = () => {
         <div className={styles.main_comment_container}>
           <div className={styles.comments_container}>
             <div className={styles.comments_word}>Комментарии</div>
+            <div className={styles.write_comment_container}>
+              <button>Оставить отзыв</button>
+            </div>
 
-            {comments.map((comment) => (
-              <div key={comment.id} className={styles.comment}>
-                <div className={styles.user_info}>
-                  <img src={comment.url_photo} className={styles.user_image} />
-                  <div className={styles.comment_username}>
-                    {comment.username}
-                  </div>
-                  <div>
-                    {/* Отрисовка количества звёзд в комментарии к семинару */}
-                    {Array.from({ length: comment.rating }).map((_, index) => (
-                      <img
-                        key={index}
-                        className={styles.comment_rate_icon}
-                        src={rate_icon}
-                        alt="rate_icon"
-                      />
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <p className={styles.comment_text}>{comment.comment_text}</p>
-                </div>
-              </div>
-            ))}
+            <CommentsCarousel comments={comments} />
           </div>
         </div>
       </div>

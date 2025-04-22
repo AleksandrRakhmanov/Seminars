@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './SeminarCard.module.css';
+import styles from './SeminarCard.module.scss';
 import { Link } from 'react-router-dom';
 
 const SeminarCard = ({ seminar, onEdit, onDelete, onSignUp }) => {

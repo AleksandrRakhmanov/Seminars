@@ -125,13 +125,13 @@ const YourSeminars = () => {
                 </Link>
 
                 <div className={styles.icons}>
-                  <button
+                  {/* <button
                     className={styles.edit_btn}
                     onClick={(e) => {
                       e.stopPropagation();
                       onEdit(seminar.id);
                     }}
-                  ></button>
+                  ></button> */}
                   <button
                     className={styles.delete_btn}
                     onClick={(e) => {
