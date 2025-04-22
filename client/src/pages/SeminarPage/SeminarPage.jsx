@@ -6,8 +6,10 @@ import icon_favorite from './icons/icon_favorite_light.png';
 import count_icon from './icons/eye_icon.png';
 import user_image from './icons/user_image.jpg';
 import rate_icon from './icons/rate_icon.png';
+import close_icon from './icons/close_icon.png'
 import Loading from './Loader/Loader';
 import CommentsCarousel from './CommentsCarousel';
+import StarRating from './Star_rating/StarRating';
 import styles from './SeminarPage.module.css';
 
 const SeminarPage = () => {
@@ -15,6 +17,13 @@ const SeminarPage = () => {
   const [seminar, setSeminar] = useState(null);
   const [comments, setComments] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalCommentOpen, setIsModalCommentOpen] = useState(false);
+
+  const userComment = {
+    username: '',
+    rate: 0,
+    comment: ''
+  }
 
   const addSeminar = async (seminarId) => {
     setIsModalOpen(true);
@@ -39,9 +48,18 @@ const SeminarPage = () => {
     }
   };
 
+  const addComment = async () => {
+    setIsModalCommentOpen(false)
+  }
+
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
+  const openModalComment = () => {
+    setIsModalCommentOpen(!isModalCommentOpen)
+    console.log('Окно комментария открыто' , isModalCommentOpen);
+  }
 
   // Функция для увеличения просмотров
   const incrementViews = async () => {
@@ -155,7 +173,7 @@ const SeminarPage = () => {
         <div className={styles.main_comment_container}>
           <div className={styles.comments_container}>
             <div className={styles.comments_word}>Комментарии</div>
-            <div className={styles.write_comment_container}>
+            <div onClick={openModalComment} className={styles.write_comment_container}>
               <button>Оставить отзыв</button>
             </div>
 
@@ -165,17 +183,39 @@ const SeminarPage = () => {
       </div>
 
       {/* Модальное окно БУДУ СМОТРЕТЬ */}
-      {isModalOpen && (
-        <div className={styles.modalOverlay}>
-          <div className={styles.modal}>
-            <div>
-            <p>Семинар добавлен в&nbsp;</p>
-            <p> <Link className={styles.modal_link} to='/yourSeminars'>Ваши семинары!</Link></p>
-            </div>
-            <button onClick={closeModal}>Закрыть</button>
-          </div>
+    <div className={`${styles.modalOverlay} ${isModalOpen ? styles.active : ''}`}>
+      <div className={styles.modal}>
+        <div>
+          <p>Семинар добавлен в&nbsp;</p>
+          <p><Link className={styles.modal_link} to='/yourSeminars'>Ваши семинары!</Link></p>
         </div>
-      )}
+    <button onClick={closeModal}>Закрыть</button>
+  </div>
+</div>
+
+      {/* Модальное окно ОСТАВИТЬ ОТЗЫВ */}
+    <div className={`${styles.modalOverlayComments} ${isModalCommentOpen ? styles.active : ''}`}>
+        <div className={styles.modalComments}>
+          <p>Поделитесь своими впечатлениями о семинаре</p>
+          <div onClick={openModalComment} className={styles.closeModalComments}>            
+              <img src={close_icon}/>
+
+          </div>
+
+          <div className={styles.comment_username_container}>
+          <input className={styles.comment_username} placeholder='Ваше имя...'></input>
+          </div>
+          <div className={styles.rate_icon_comment_container}>
+      {/* Оценка семинара от пользователя */}
+      <StarRating nitialRating={0} onRatingChange={(rating) => console.log('Selected rating:', rating)} />
+          </div>
+          <div className={styles.comment_text_input_container}>
+            <textarea placeholder='Ваше сообщение...' className={styles.comment_text_input}></textarea>
+          </div>
+            <button onClick={addComment} className={styles.confirm_comment_btn} >Отправить отзыв</button>
+   </div>
+
+  </div>
     </div>
   );
 };

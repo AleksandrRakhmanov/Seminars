@@ -1,4 +1,5 @@
 .carouselContainer {
+  margin-top: 65px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -39,13 +40,14 @@
 }
 
 .comment {
-  box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  border-radius: 5px;
+  border: 1px solid rgb(214, 214, 214);
+  border-radius: 10px;
   margin-right: 20px;
   width: 400px;
   min-height: 200px;
-  background-color: rgb(239, 239, 239);
+  background-color: rgb(251, 251, 251);
 }
 
 .user_info {

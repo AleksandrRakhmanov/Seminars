@@ -1,8 +1,9 @@
+$primary-color: #3498db;
 
 .seminar_card {
   text-align: center;
   width: 300px;
-  /* height: 500px; */
+  height: 500px; 
   background-color: #f9f9f9;
   padding: 5px;
   border: 1px solid #ddd;
@@ -16,6 +17,7 @@
   display: flex;
   flex-direction: column;
   transition: 0.5s;
+  overflow: hidden;
 }
 
 .seminar_card:hover {
@@ -57,16 +59,24 @@
   background-color: rgb(248, 87, 87);
 }
 
+
 .seminar_title {
   font-size: 22px;
   margin-top: 22px;
   margin-bottom: 20px;
   border-bottom: 1px solid rgb(212, 212, 212);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .seminar_description {
   margin-bottom: 20px;
   font-size: 17px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Ограничивает количество строк */
+  -webkit-box-orient: vertical;
 }
 
 .seminar_dateAndTime {
