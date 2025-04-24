@@ -5,9 +5,7 @@
 
 .photo {
   width: 400px;
-
   width: 30%;
-
   border-radius: 50%;
   border: 1px solid rgb(217, 12, 12);
 }
@@ -15,7 +13,6 @@
 .container {
   padding-left: 30px;
   padding-right: 30px;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,38 +20,34 @@
   background-color: white;
   border-radius: 10px;
   margin-bottom: 40px;
-
   width: 93%;
 }
 
-/* Контейнер формы */
 .loginContainer {
   justify-content: center;
   display: flex;
   flex-direction: column;
-
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 500px;
   height: 70%;
-  /* border: 1px solid black; */
 }
 
-/* Заголовок */
+
 .title {
   text-align: center;
   margin-bottom: 30px;
   font-size: 20px;
 }
 
-/* Форма */
+
 .form {
   display: flex;
   flex-direction: column;
 }
 
-/* Поля ввода */
+
 .input {
   padding: 10px;
   margin-bottom: 15px;
@@ -63,39 +56,36 @@
   font-size: 16px;
 }
 
-/* Кнопка */
+
 .button {
   padding: 10px;
-  /* background-color: #fcc37d; */
   background-color: #e9be8a;
-
   border: none;
   border-radius: 4px;
   color: #fff;
   font-size: 16px;
   cursor: pointer;
+
+  &:hover {
+    background-color: #e5b77e;
+  }
 }
 
-.button:hover {
-  background-color: #e5b77e;
-}
-
-/* Ссылка на регистрацию */
 .registerLink {
   color: rgb(163, 163, 163);
   text-align: center;
   margin-top: 10px;
-}
 
-.registerLink p {
-  font-size: 15px;
+  p {
+    font-size: 15px;
+  }
 }
 
 .link {
   color: #007bff;
   text-decoration: none;
-}
 
-.link:hover {
-  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+  }
 }

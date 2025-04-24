@@ -1,0 +1,95 @@
+.userIcon {
+  width: 50px;
+  margin-right: 5px;
+}
+
+.burgerIcon {
+  margin-bottom: 10px;
+  width: 30px;
+  height: 30px;
+  margin-left: 12px;
+  cursor: pointer;
+}
+
+.navbarContainer {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid #e1d7cc;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  background-color: #e1d7cc;
+}
+
+/* Стили для бокового меню */
+.sideMenu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 180px;
+  height: 100%;
+  background-color: #f4f4f4;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease;
+  border-radius: 5px;
+  z-index: 3000;
+
+  ul {
+    list-style: none;
+    padding-top: 20px;
+
+    li {
+      margin-bottom: 15px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  }
+  
+  &.open {
+    left: 0;
+    z-index: 3000;
+  }
+
+  .sideMenuList {
+    border: 0.9px solid rgb(4, 4, 4);
+    position: relative;
+    text-align: center;
+
+    li {
+      width: 150px;
+      height: 25px;
+      border: 0.9px solid rgb(4, 4, 4);
+      border-radius: 0 20px 20px 0;
+      transition: 0.2s;
+
+      &:last-child {
+        position: fixed;
+        bottom: 0;
+      }
+
+      &:hover {
+        background-color: rgb(212, 212, 212);
+      }
+
+      a {
+        display: block;
+        color: black;
+        width: 100%;
+        height: 100%; 
+      }
+    }
+  }
+}
+
+/* Стили для затемнения фона */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
