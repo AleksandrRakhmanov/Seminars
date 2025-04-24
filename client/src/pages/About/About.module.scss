@@ -16,11 +16,11 @@ h1 {
 .aboutHeader {
   text-align: center;
   margin-bottom: 40px;
-}
 
-.aboutHeader h1 {
-  font-size: 2.5rem;
-  color: #333;
+  h1 {
+    font-size: 2.5rem;
+    color: #333;
+  }
 }
 
 .aboutContainer {
@@ -31,12 +31,12 @@ h1 {
 
 .aboutImage {
   flex: 1;
-}
 
-.aboutImage img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
 }
 
 .aboutText {
@@ -45,28 +45,29 @@ h1 {
 
 .aboutSection {
   margin-bottom: 30px;
-}
 
-.aboutSection h2 {
-  font-size: 2rem;
-  color: #444;
-  margin-bottom: 10px;
-}
+  h2 {
+    font-size: 2rem;
+    color: #444;
+    margin-bottom: 10px;
+  }
 
-.aboutSection p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #666;
+  p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666;
+  }
 }
 
 .aboutFooter {
   text-align: center;
   margin-top: 10px;
   padding-top: 10px;
+
+  p {
+    margin-top: 60px;
+    font-size: 1rem;
+    color: #777;
+  }
 }
 
-.aboutFooter p {
-  margin-top: 60px;
-  font-size: 1rem;
-  color: #777;
-}

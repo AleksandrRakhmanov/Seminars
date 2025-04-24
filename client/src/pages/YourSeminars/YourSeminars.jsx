@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Suspense } from 'react';
-import styles from './YourSeminars.module.css';
+import styles from './YourSeminars.module.scss';
 import Modal from './Modal/Modal';
 import DeleteModal from '../Seminars/DeleteModal/DeleteModal';
 import EditModal from '../Seminars/EditModal/EditModal';

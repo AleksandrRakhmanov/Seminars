@@ -27,10 +27,10 @@
   border-radius: 50%;
   width: 50px;
   border: 1px solid black;
-}
 
-.carouselButton:hover {
+  &:hover {
   color: #767474;
+  }
 }
 
 .noComments {

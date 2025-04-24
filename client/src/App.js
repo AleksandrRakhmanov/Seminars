@@ -1,6 +1,6 @@
 import React, { Profiler } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css';
+import './App.scss';
 import './ResetStyles.css';
 import Navbar from './layouts/Navbar/Navbar';
 import Seminars from './pages/Seminars/Seminars';

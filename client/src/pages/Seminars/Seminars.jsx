@@ -1,5 +1,5 @@
 import React, { useState, Suspense } from 'react';
-import styles from './Seminars.module.css';
+import styles from './Seminars.module.scss';
 import DeleteModal from './DeleteModal/DeleteModal';
 import EditModal from './EditModal/EditModal';
 import search_icon from './icons/search_icon.png';

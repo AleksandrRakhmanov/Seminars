@@ -1,5 +1,5 @@
 import React from 'react';
-import './EditModal.css';
+import './EditModal.scss';
 const EditModal = ({ seminar, change, save, cancel }) => {
   return (
     <div className="modal_window">

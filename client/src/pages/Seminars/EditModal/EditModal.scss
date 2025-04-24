@@ -19,17 +19,43 @@
   max-width: 400px;
   width: 100%;
   text-align: center;
-}
 
-.modal h2 {
-  font-size: 20px;
-  font-weight: 800;
-  margin-bottom: 10px;
-}
+  h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
 
-.modal p {
-  font-size: 17px;
-  margin-bottom: 20px;
+  p {
+    font-size: 17px;
+    margin-bottom: 20px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  label {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-weight: bold;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  input, textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
 }
 
 .modal_btn {
@@ -45,10 +71,11 @@
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-}
 
-.confirm_btn:hover {
+  &:hover {
   background-color: #ff1a1a;
+
+  }
 }
 
 .cancel_btn {
@@ -58,8 +85,9 @@
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+
+  &:hover {
+    background-color: #ddd;
+  }
 }
 
-.cancel_btn:hover {
-  background-color: #ddd;
-}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import rate_icon from './icons/rate_icon.png';  
-import styles from './Carousel.module.css';
+import styles from './Carousel.module.scss';
 
 const CommentsCarousel = ({ comments }) => {
   const [currentIndex, setCurrentIndex] = useState(0);

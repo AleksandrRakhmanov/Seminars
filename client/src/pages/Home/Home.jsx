@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import styles from './Home.module.css';
+import styles from './Home.module.scss';
 import Carousel from './MyCarousel';
 
 const Home = () => {

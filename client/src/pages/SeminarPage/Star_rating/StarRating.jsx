@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './StarRating.css';
+import './StarRating.scss';
 
 const StarRating = ({ initialRating = 0, onRatingChange }) => {
   const [rating, setRating] = useState(initialRating);

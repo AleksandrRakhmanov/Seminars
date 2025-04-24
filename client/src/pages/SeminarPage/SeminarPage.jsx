@@ -10,7 +10,7 @@ import close_icon from './icons/close_icon.png'
 import Loading from './Loader/Loader';
 import CommentsCarousel from './CommentsCarousel';
 import StarRating from './Star_rating/StarRating';
-import styles from './SeminarPage.module.css';
+import styles from './SeminarPage.module.scss';
 
 const SeminarPage = () => {
   const { id } = useParams();

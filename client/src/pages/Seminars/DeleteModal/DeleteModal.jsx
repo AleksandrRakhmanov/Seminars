@@ -1,5 +1,5 @@
 import React from 'react';
-import './DeleteModal.css';
+import './DeleteModal.scss';
 
 const DeleteModal = ({ confirm, cancel }) => {
   return (

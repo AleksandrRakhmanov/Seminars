@@ -15,24 +15,27 @@
     transition: all 0.3s;
     margin: 0 5px;
     position: relative;
+
+    &.active {
+      color: #ffcc00;
+      animation: bounce 0.5s;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        background: radial-gradient(circle, rgba(255,204,0,0.4) 0%, rgba(255,204,0,0) 30%);
+        border-radius: 50%;
+        z-index: -1;
+      }
+    }
   }
+
   
-  .star.active {
-    color: #ffcc00;
-    animation: bounce 0.5s;
-  }
-  
-  .star.active::after {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    background: radial-gradient(circle, rgba(255,204,0,0.4) 0%, rgba(255,204,0,0) 30%);
-    border-radius: 50%;
-    z-index: -1;
-  }
+
   
   @keyframes bounce {
     0%, 100% { transform: scale(1); }

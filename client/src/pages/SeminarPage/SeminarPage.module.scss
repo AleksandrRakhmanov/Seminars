@@ -84,10 +84,11 @@
   border: 1.5px solid rgb(60, 59, 59);
   margin-bottom: 30px;
   transition: 0.2s ease;
-}
 
-.addFavoriteBtn:hover {
+  &:hover {
   background-color: rgb(225, 224, 224);
+
+  }
 }
 
 .aboutFilm {
@@ -157,56 +158,11 @@
 .author_container {
   margin-top: 4px;
   display: flex;
-}
 
-.author_container div {
+  div {
   margin-right: 6px;
+  }
 }
-
-/* ---------------- */
-
-/* .modalOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  justify-content: center;
-  text-align: center;
-}
-
-.modal div{
-  display: flex;
-}
-
-.modal_link{ 
-  border-bottom: 0.5px solid rgb(140, 140, 140);
-}
-
-.modal button {
-  margin-top: 10px;
-  padding: 5px 10px;
-  width: 200px;
-  height: 40px;
-  background-color: #f1e8de;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.modal button:hover {
-  background-color: #e4d8ca;
-} */
 
 .modalOverlay {
   position: fixed;
@@ -221,11 +177,15 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-}
 
-.modalOverlay.active {
-  opacity: 1;
-  visibility: visible;
+  &.active {
+    opacity: 1;
+    visibility: visible;
+
+    .modal {
+    transform: translateY(0);  
+    }
+  }
 }
 
 .modal {
@@ -236,33 +196,29 @@
   text-align: center;
   transform: translateY(20px);
   transition: transform 0.3s ease;
-}
 
-.modalOverlay.active .modal {
-  transform: translateY(0);
-}
-
-.modal div {
+  div {
   display: flex;
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    width: 200px;
+    height: 40px;
+    background-color: #f1e8de;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #e4d8ca;
+    }
+  }
 }
 
 .modal_link { 
   border-bottom: 0.5px solid rgb(140, 140, 140);
-}
-
-.modal button {
-  margin-top: 10px;
-  padding: 5px 10px;
-  width: 200px;
-  height: 40px;
-  background-color: #f1e8de;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.modal button:hover {
-  background-color: #e4d8ca;
 }
 
 .modalOverlayComments {
@@ -278,11 +234,15 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-}
 
-.modalOverlayComments.active {
-  opacity: 1;
-  visibility: visible;
+  &.active {
+    opacity: 1;
+    visibility: visible;
+
+    .modalComments {
+      transform: translateY(0);
+    }
+  }
 }
 
 .modalComments {
@@ -294,10 +254,10 @@
   text-align: center;
   transform: translateY(20px);
   transition: transform 0.3s ease;
-}
 
-.modalOverlayComments.active .modalComments {
-  transform: translateY(0);
+  p {
+  margin-bottom: 10px;  
+  }
 }
 
 .closeModalComments {
@@ -315,22 +275,16 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-}
 
-.closeModalComments:hover {
-  background-color: rgb(241, 241, 241);
-  transition: 0.2s;
-
-
-}
-
-.closeModalComments img {
+  img {
   width: 12px;
-}
 
+  }
 
-.modalComments p{
-  margin-bottom: 10px;
+  &:hover {
+    background-color: rgb(241, 241, 241);
+    transition: 0.2s;
+  }
 }
 
 .comment_username_container {
@@ -363,7 +317,6 @@
 }
 
 .rate_icon_comment_container {
-  /* border: 1px solid rgb(203, 203, 203); */
   display: flex;
   margin-bottom: 7px;
 }
@@ -381,11 +334,10 @@
   border-radius: 5px;
   background-color: rgb(176, 255, 176);
 
-}
-
-.confirm_comment_btn:hover {
-  background-color: rgb(150, 249, 150);
-  transition: 0.2s;
+  &:hover {
+    background-color: rgb(150, 249, 150);
+    transition: 0.2s;
+  }
 }
 
 /* ----------------- */
@@ -425,16 +377,13 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+
+  button {
+    font-size: 22px;
+    font-size: 19px;
+  }
+  &:hover {
+    background-color: #e4e3e3;
+    transition: 0.3s;
+  }
 } 
-
-.write_comment_container:hover {
-  background-color: #e4e3e3;
-  transition: 0.3s;
-
-}
-
-.write_comment_container button {
-  font-size: 22px;
-  font-size: 19px;
-}
- 

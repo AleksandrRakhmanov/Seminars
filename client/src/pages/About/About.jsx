@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './About.module.css'; // Импортируем стили
+import styles from './About.module.scss';
 import logo_img from './logo_img.png';
 
 const About = () => {

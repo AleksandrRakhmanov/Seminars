@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import styles from './Carousel.module.css';
+import styles from './Carousel.module.scss';
 
 
 const Carousel = ({ slides, interval = 3000, onSlideClick }) => {

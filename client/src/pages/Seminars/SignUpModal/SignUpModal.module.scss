@@ -7,11 +7,10 @@
   cursor: pointer;
   transition: 0.3s;
 
-}
-
-.confirm_sign_up_btn:hover {
-  background-color: #e0d8ce;
-  transform: scale(1.02);
+  &:hover {
+    background-color: #e0d8ce;
+    transform: scale(1.02);
+  }
 }
 
 .modal_window {

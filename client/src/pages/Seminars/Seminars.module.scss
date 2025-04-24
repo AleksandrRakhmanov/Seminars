@@ -1,5 +1,4 @@
 
- 
  .seminars_contanter {
   border-radius: 10px;
   width: 93%;
@@ -64,10 +63,10 @@ p {
   border-radius: 5px;
   height: 35px;
   width: 250px;
-}
 
-.search_input:hover {
-  border: 0.1px solid rgb(214, 212, 212);
+  &:hover {
+    border: 0.1px solid rgb(214, 212, 212);
+  }
 }
 
 .search_icon {

@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './UserProfile.module.css'
+import styles from './UserProfile.module.scss'
 
 const UserProfile = () => {
   return (

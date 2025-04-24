@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './SignUpModal.module.css';
+import styles from './SignUpModal.module.scss';
 const SignUpModal = ({ onConfirm }) => {
   return (
     <div className={styles.modal_window}>

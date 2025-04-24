@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Favorites.module.css';
+import styles from './Favorites.module.scss';
 const Favorites = () => {
   return (
     <div className={styles.main_container}>
