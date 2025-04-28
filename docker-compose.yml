@@ -8,6 +8,7 @@ services:
       - '3306:3306'
     volumes:
       - mysql-data:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
     healthcheck:
       test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost', '-u', 'root', '-p$$MYSQL_ROOT_PASSWORD']
       interval: 5s
@@ -18,12 +19,12 @@ services:
     image: phpmyadmin/phpmyadmin:latest
     restart: always
     ports:
-      - '8080:80'  # Доступ через http://localhost:8080
+      - '8080:80'  
     environment:
-      PMA_HOST: mysql  # Связь с сервисом mysql
-      MYSQL_ROOT_PASSWORD: test123  # Пароль должен совпадать с mysql
+      PMA_HOST: mysql  
+      MYSQL_ROOT_PASSWORD: test123  
     depends_on:
-      - mysql  # Запускать только после mysql
+      - mysql  
 
   server:
     build:
