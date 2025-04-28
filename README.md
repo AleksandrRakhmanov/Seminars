@@ -18,7 +18,6 @@
 
 ![Список семинаров](./screenshots/seminars.png)
 ![Страница семинара](./screenshots/seminar_page.png)
-![Страница семинара](./screenshots/seminar_page.png)
 ![Редактивароние семинара](./screenshots/edit_seminar.png)
 ![Удаление семинара](./screenshots/delete_seminar.png)
 ![Написать отзыв](./screenshots/write_comment.png)
